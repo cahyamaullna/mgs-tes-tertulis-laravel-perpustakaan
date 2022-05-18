@@ -36,12 +36,9 @@
         <td>{{ $book->foto_buku }}</td>
         <td>
             <form action="{{ route('books.destroy',$book->id) }}" method="POST">
-
-                <a class="btn btn-primary" href="{{ route('books.edit',$book->id) }}">Edit</a>
-
                 @csrf
                 @method('DELETE')
-
+                <a class="btn btn-primary" href="{{ route('books.edit',$book->id) }}">Edit</a>
                 <button type="submit" class="btn btn-danger">Hapus</button>
             </form>
         </td>
