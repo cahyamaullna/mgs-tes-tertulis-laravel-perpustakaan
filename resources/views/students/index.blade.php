@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('students.create') }}"> Tambah</a>
-            <a class="btn btn-warning" href="{{ route('students.create') }}"> Cetak</a>
+            <a class="btn btn-warning" href="{{ route('export') }}"> Cetak</a>
 
         </div>
     </div>

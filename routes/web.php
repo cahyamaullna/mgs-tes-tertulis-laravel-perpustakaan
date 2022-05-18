@@ -8,6 +8,8 @@ use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BorrowingController;
 use App\Http\Controllers\DashboardController;
+use App\Exports\StudentExport;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('students', StudentController::class);
+Route::get('student/export/', [StudentController::class, 'export'])->name('export');
 Route::resource('studentGroups', StudentGroupController::class);
 Route::resource('rayons', RayonController::class);
 Route::resource('publishers', PublisherController::class);

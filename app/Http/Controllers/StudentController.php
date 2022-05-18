@@ -6,6 +6,9 @@ use App\Models\Student;
 use App\Models\Rayon;
 use App\Models\StudentGroup;
 use Illuminate\Http\Request;
+use App\Exports\StudentExport;
+
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -113,5 +116,9 @@ class StudentController extends Controller
 
         return redirect()->route('students.index')
             ->with('success', 'Berhasil Hapus !');
+    }
+    public function export()
+    {
+    return Excel::download(new StudentExport, 'datasiswa.xlsx'); 
     }
 }

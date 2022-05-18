@@ -18,7 +18,7 @@
 	<table class='table table-bordered'>
 		<thead>
 			<tr>
-            <th>No</th>
+			<th>No</th>
             <th>Judul Buku</th>
             <th>Penulis</th>
             <th>Penerbit</th>
@@ -28,6 +28,8 @@
 		<tbody>
         @foreach ($books as $book)
     <tr>
+		@php $i=1 @endphp
+		<td>{{ $i++ }}</td>
         <td>{{ $book->judul }}</td>
         <td>{{ $book->penulis }}</td>
         <td>{{ $book->penerbit }}</td>
