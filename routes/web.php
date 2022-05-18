@@ -34,5 +34,6 @@ Route::resource('studentGroups', StudentGroupController::class);
 Route::resource('rayons', RayonController::class);
 Route::resource('publishers', PublisherController::class);
 Route::resource('books', BookController::class);
+Route::get('/pdf/books', [BookController::class, 'pdf_book'])->name('pdf');
 Route::resource('borrowings', BorrowingController::class);
 Route::resource('dashboard_', DashboardController::class);

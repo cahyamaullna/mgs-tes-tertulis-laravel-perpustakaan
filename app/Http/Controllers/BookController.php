@@ -6,6 +6,8 @@ use App\Models\Book;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
 
+use PDF;
+
 class BookController extends Controller
 {
     /**
@@ -20,7 +22,13 @@ class BookController extends Controller
         return view('books.index', compact('books'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
-
+    public function pdf_book()
+    {
+    	$books = book::all();
+ 
+    	$pdf = PDF::loadview('books.pdf',['books'=>$books]);
+    	return $pdf->download('laporan-books.pdf');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +52,7 @@ class BookController extends Controller
             'judul' => 'required',
             'penulis' => 'required',
             'penerbit' => 'required',
-            'foto' => 'required'
+            'foto_buku' => 'required'
             
         ]);
 
@@ -89,7 +97,7 @@ class BookController extends Controller
             'judul' => 'required',
             'penulis' => 'required',
             'penerbit' => 'required',
-            'foto' => 'required'
+            'foto_buku' => 'required'
 
         ]);
 

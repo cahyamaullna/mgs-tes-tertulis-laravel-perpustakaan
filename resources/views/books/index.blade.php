@@ -8,6 +8,7 @@
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('books.create') }}"> Tambah</a>
+            <a class="btn btn-warning" href="{{ route('pdf')}}"> Cetak</a>
         </div>
     </div>
 </div>

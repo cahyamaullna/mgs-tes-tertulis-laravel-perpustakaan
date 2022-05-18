@@ -17,8 +17,8 @@ class CreateBorrowingsTable extends Migration
             $table->id();
             $table->string('nama_peminjam');
             $table->string('judul_buku');
-            $table->string('tgl_pinjam');
-            $table->string('tgl_kembali');
+            $table->date('tgl_pinjam');
+            $table->date('tgl_kembali');
             $table->string('ket');
             $table->timestamps();
         });

@@ -49,7 +49,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Foto Buku</strong>
-                <input type="file" name="foto-buku" class="form-control" placeholder="foto-buku">
+                <input type="file" name="foto_buku" class="form-control" placeholder="foto buku">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

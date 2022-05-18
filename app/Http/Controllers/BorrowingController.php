@@ -16,10 +16,15 @@ class BorrowingController extends Controller
      */
     public function index()
     {
-        $borrowings = Borrowing::latest()->paginate(5);
+            $search = Borrowing::latest();
+            if (request('search')) {
+                $search->where('nama_peminjam', 'like', '%' . request('search') . '%')
+                    ->orWhere('nama_peminjam', 'like', '%' . request('search') . '%');
+            }
+            $borrowings = $search->paginate(5);
 
-        return view('borrowings.index', compact('borrowings'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            return view('borrowings.index', compact('borrowings'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
